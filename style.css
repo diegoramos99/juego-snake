@@ -1,0 +1,48 @@
+.body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    margin: 0;
+    background-color: 5px solid rgb(216, 203, 203);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tablero{
+
+    width: 50%;
+    height: 90%;
+    border: 2px solid green;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+
+}
+.casilla{
+    border: 1px solid rgb(83, 81, 81);
+    width: 10%;
+    height: 10%;
+    
+}.btn-iniciar{
+  padding: 1rem ;
+  background-color: black;
+  color: aliceblue;
+  margin: 1rem;
+  margin-top: 0;  
+}
+.btn-iniciar:hover{
+    cursor: pointer;
+}
+
+.rojo{
+background-color: red;
+}
+.marron{
+    background-color: rgb(70, 43, 30);
+}
