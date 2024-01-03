@@ -41,7 +41,7 @@
     height: 5%;
  
  background-color: greenyellow;
-transition: all .1s;
+
 }.btn-iniciar{
     grid-area: btn-iniciar;
   padding: 1rem ;
@@ -60,7 +60,7 @@ background-color: red;
 .marron{
     background-color: rgb(70, 43, 30);
    padding: 12px;
-   transition: background-color 0.5s ease;
+ 
 }
 
 .pared{
