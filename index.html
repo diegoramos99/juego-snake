@@ -2,26 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
 <body>
-   
+    <div class="container">
+      <div class="tituloForm">
+        <h1>registrate con confianza pa</h1>
+      </div>
+      <form action="" method="" onsubmit="return false">
+        <label for="nombre">ingrese un nombre</label>
+        <input id="nombre" name="nombre" class="usuario" type="text" placeholder="" value="">
+        <label for="contraceña">ingrese una contraseña</label>
+        <input  id="contraceña"type="password" name="contraceña" value="">
+        <button id="ingresar" type="submit">ingresar</button>
+        <span>  no tenes una cuenta?  <a href="views/register.html">registrate mi rey</a></span>
+      </form>
+</div>
+
     
-    <div id="container"class="container">
-          <button id="btn-iniciar"class="btn-iniciar">iniciar juego
-        </button>
-       
-        <div id="tablero"  class="tablero">
-        </div>
-       
-        
-    </div>
-    
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
