@@ -1,7 +1,6 @@
 const tablero = document.getElementById("tablero");
 const boton = document.getElementById("btn-iniciar")
 const bestScore=document.querySelector("#bestScore")
-const listaDeGusanos=JSON.parse( localStorage.getItem("gusanos"))
 var arra = []
 var arrb = [];
 var arrc = [];
@@ -269,18 +268,34 @@ boton.addEventListener('click', () => {
     }
     function cargarLosPuntajes() {
         var puntajeACtual=score
-        listaDeGusanos.forEach(gusano => {
-            if (gusano.enLinea) {
-                if (score>gusano.bestScore) {
+        const usuario=JSON.parse(localStorage.getItem("usuario"))
+
+     
+                if (score>usuario.bestScore) {
                     bestScore.textContent=score
-                    gusano.bestScore=puntajeACtual
-                    localStorage.setItem("gusanos",JSON.stringify(listaDeGusanos))
+                    usuario.bestScore=puntajeACtual
+                    localStorage.setItem("usuario",JSON.stringify(usuario))
                 }
-            }
-        });
+            
     }
 
-    
+    function aumentarVelocidadDelGusano() {
+        if (score>=4500) {
+            return 50
+        }else if (score>=4000) {
+            return 100
+        }else if(score>=3000){
+            return 150
+        }else if (score>=2000) {
+            return 200
+        }else if (score>=1000) {
+            return 250
+        }else{
+            return 300
+        }
+            
+        
+    }
     
     // controles del gusano--------------------------------------------------------------
 
@@ -291,6 +306,7 @@ boton.addEventListener('click', () => {
         var teclaPresionada = e.key
         var setIntervalID
         var ultimaTeclaPresionada
+        
         switch (teclaPresionada) {
             case 'ArrowRight':
                 setIntervalID = setInterval(() => {
@@ -307,7 +323,7 @@ boton.addEventListener('click', () => {
                           
                     })
                     queElGusanoPierdaSiTocaSuCuerpo()
-                }, 100);
+                }, aumentarVelocidadDelGusano());
 
 
                 break;
@@ -325,7 +341,7 @@ boton.addEventListener('click', () => {
                             clearInterval(setIntervalID)
                         }
                     })
-                }, 100)
+                }, aumentarVelocidadDelGusano())
 
                 break;
             case 'ArrowDown':
@@ -342,7 +358,7 @@ boton.addEventListener('click', () => {
                             clearInterval(setIntervalID)
                         }
                     })
-                }, 100);
+                }, aumentarVelocidadDelGusano());
                 break;
             case 'ArrowUp':
                 setIntervalID = setInterval(() => {
@@ -357,7 +373,7 @@ boton.addEventListener('click', () => {
                             clearInterval(setIntervalID)
                         }
                     })
-                }, 100);
+                }, aumentarVelocidadDelGusano());
                 break;
 
             default:
@@ -370,15 +386,13 @@ boton.addEventListener('click', () => {
 })
 
 
-console.log("asdasd");
-listaDeGusanos.forEach(element => {
-if (element.enLinea) {
-    console.log(element);
-    console.log("gusano en linea");
-    bestScore.textContent=element.bestScore
-}
+const usuario=JSON.parse(localStorage.getItem("usuario"))
+console.log(usuario);
+bestScore.textContent=usuario.bestScore
+// bestScore.textContent=usuario.bestScore
+
     
-});
+
 
 
 
