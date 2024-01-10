@@ -279,6 +279,7 @@ boton.addEventListener('click', () => {
             
     }
 
+
     function aumentarVelocidadDelGusano() {
         if (score>=4500) {
             return 50
@@ -391,7 +392,14 @@ console.log(usuario);
 bestScore.textContent=usuario.bestScore
 // bestScore.textContent=usuario.bestScore
 
-    
+function cargarNombre() {
+    const usuario=JSON.parse(localStorage.getItem("usuario"))
+    const nombreUsuario=document.querySelector("#nombre")
+    let nombre=usuario.usuario
+    nombreUsuario.textContent=nombre.toUpperCase()
+    console.log(usuario.usuario);
+}
+cargarNombre()
 
 
 
