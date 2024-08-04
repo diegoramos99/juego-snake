@@ -9,7 +9,7 @@ function registrarUsuario() {
     bestScore:0
   }
   localStorage.setItem("usuario",JSON.stringify(usuarioNuevo));
-  location.href="../views/juego.html"
+  location.href="../views/diego.html"
 }
 
 btn.addEventListener("click",registrarUsuario)
