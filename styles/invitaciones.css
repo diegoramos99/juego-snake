@@ -8,3 +8,16 @@ img{
     height: 100%;
     object-fit: contain;
 }
+.container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.invitado{
+    border: 2px solid black;
+    width: 30%;
+    height: 5rem;
+    margin: 2px ;
+    background-color: rgb(222, 188, 114);
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
