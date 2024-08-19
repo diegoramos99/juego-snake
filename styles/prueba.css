@@ -1,0 +1,72 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Fuego artificial */
+.firework {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: red;
+    border-radius: 50%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 1);
+    animation: shoot 2s ease-out, explode 2s ease-out 2s;
+}
+
+/* Ascenso del cohete */
+@keyframes shoot {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-90vh) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Explosión del cohete */
+@keyframes explode {
+    0% {
+        transform: translateY(-90vh) scale(1);
+        opacity: 1;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 1);
+    }
+    50% {
+        transform: translateY(-90vh) scale(3);
+        opacity: 0.8;
+        box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+    }
+    100% {
+        transform: translateY(-90vh) scale(0);
+        opacity: 0;
+        box-shadow: 0 0 50px rgba(23, 241, 70, 0.676);
+    }
+}
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+    position: relative;
+}
+
+#fireworkCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

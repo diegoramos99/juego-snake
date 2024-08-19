@@ -53,14 +53,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 1rem;
+    position: absolute;
+    top: 0;
 }
 
 img {
-    margin: 0 1rem;
     width: 100%;
-    height: 90%;
+    height: 80%;
     object-fit: cover;
     border-radius: 20px;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 10px rgba(242, 211, 55, 0.7);
     animation: dropAndBounce 7s ease-out;
 }
